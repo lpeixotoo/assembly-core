@@ -20,4 +20,4 @@ WORKDIR /home/app
 
 COPY ./ ./
 
-#ENTRYPOINT dotnet test
+ENTRYPOINT dotnet test
