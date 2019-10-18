@@ -1,0 +1,31 @@
+#+TITLE: assembly-core
+
+* Purpose
+
+The purpose of this project is to demonstrate the temptative to load an assembly  -- compile by Roslyn API-- from a memory stream.
+
+* How to run
+
+** Using Docker
+
+#+BEGIN_SRC shell
+> docker build -t assembly-core .
+> docker run assembly-core
+#+END_SRC
+
+** Using .NET Core 3.0
+
+#+BEGIN_SRC shell
+> dotnet test
+#+END_SRC
+
+The current output is:
+#+BEGIN_EXAMPLE
+ X DotNetLib.Lib.Compile [758ms]
+  Error Message:
+   System.BadImageFormatException : Bad IL format.
+  Stack Trace:
+     at System.Reflection.Assembly.Load(Byte[] rawAssembly, Byte[] rawSymbolStore)
+   at System.Reflection.Assembly.Load(Byte[] rawAssembly)
+   at DotNetLib.Lib.Compile() in /home/app/Lib.cs:line 37
+#+END_EXAMPLE
